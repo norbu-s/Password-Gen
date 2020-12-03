@@ -1,80 +1,132 @@
 var generateBtn = document.querySelector("#generate");
-var lengthMinEl = "8";
-var lengthMaxEl = "128";
-var lowercaseEl = "abcdefghijklmnopqrstuvwxyz";
-var uppercaseEl = "ABCDEFGHIJKLMNOPQRSTUVWXY";
+var lengthEl = "length";
+var lowerCaseEl = "abcdefghijklmnopqrstuvwxyz";
+var upperCaseEl = "ABCDEFGHIJKLMNOPQRSTUVWXY";
 var numberEl = "0123456789";
-var specialCharactersEl = "!@#?$"; 
+var specialCharactersEl = "~!@#$%^&*()_+=-{}|[]\<>?/"; 
 
-//WHEN prompted for the length of the password
-//THEN I choose a length of at least 8 characters and no more than 128 characters
-// what length?, min 8 varchar and max 128 varchar
-// alert if below min or =128 or over or invalid type
-
-
-function generatePassword() {
-  let inputValue = prompt("Enter a number between 8 to 128 number");
-  var length = parseInt(inputValue);
-  if (length < 8 || length > 128) {
-    generatePassword();
-  } 
-  else {
-    getRandomLowerCase()
+function generateLength() {
+  let inputValue = prompt("Choose a length of at least 8 characters and no more than 128 characters");
+  let length = parseInt(inputValue);
+  if (length >= 8 && length <= 128){
+    getRandomLowerCase();
   }
+  else{ alert("Not a valid Input")
+  generateLength()
+ }
+// }
 }
+
+// function getRandomUpperCase() {
+//   let upperCaseEl = prompt("Do you want the password to include a Lowercase.Please enter 'yes' or 'no'");
+//   if (upperCaseEl === "YES" || upperCaseEl === "NO")
+//   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+//   getRandomUpperCase();
+//   console.log(upperCaseEl)
+//   }
+//  getRandomLowerCase();
+// }  
+// else {
+//    getRandomLowerCase();
+//  }
+// }
+
+// function getRandomLowerCase() {
+// let lowerCaseEl = confirm("Do you want the password to include a Lowercase.");
+// if (lowerCaseEl === "confirm");
+// return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+// console.log("getRandomLowerCase")
+// }
+
+
+
+//     getRandomUpperCase();
+//     else {
+//     getRandomLowerCase();
+//     console.log("generatePassword")
+//     }
+//    }
+
+//    function getRandomUpperCase() {
+//     let inputValue = prompt("Do you want the password to include a Lowercase. Please enter 'YES' or 'NO'");
+//     if (inputValue === "YES" || inputValue === "NO") 
+//     return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+//       getRandomNumber();
+//       else {
+//         getRandomUpperCase();
+//       console.log("getRandomUpperCase")
+//       }
+//      }
+  
+
+//      function getRandomNumber() {
+//       let inputValue = prompt("Do you want to include a number?Please enter 'yes' or 'no'");
+//        if (inputValue === "yes" || "no") 
+//        return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+//        getRandomSymbol() {
+//         else {
+//           getRandomNumber();
+//         console.log("getRandomNumber")
+//         }
+//        }
+//       }
+// function getRandomLowerCase() {
+//    let inputValue = prompt("Do you want it Lowercase");
+//    if (inputValue === "lowerCaseEl"); 
+//    return String.fromCharCode(Math.floor(Math.random() * 26) + 97){
+//     getRandomLowerCase();
+//     Console.log("getRandomLowerCase")
+//    }
+//    else {
+//     getRandomUpperCase()
+//   }
+// }
  
-function getRandomLowerCase() {
-  let inputValue = prompt("Do you want Uppercase or Lowercase");
-  if (inputValue === "lowercaseEl" || length === "uppercaseEl") {
-    getRandomLowerCase()
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
-/*if 
+// function getRandomUpperCase() {
+//   let inputValue = prompt("Do you want Uppercase ");
+//   if (inputValue === "upperCaseEl") 
+//   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);{
+//    getRandomLowerCase();
+//   else {
+//     getRandomUpperCase()
+//  }
+// }
 
-// condition here
+// function getRandomNumber() {
+//   let inputValue = prompt("Do you want to include a number");
+//   if (inputValue === "numberEl") 
+//   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+//   getRandomNumber();
+//  else {
+//   getRandomSymbol()
+//  }
+// }
 
-else
+// function getRandomSymbol() {
+//   let inputValue = prompt("Do you want to include a special Character");
+//   if (inputValue === "numberEl") 
+//   const symbols = "~!@#$%^&*()_+=-{}|[]\<>?/";
+//   return symbols[Math.floor(Math.random() * symbols.length)]
+//  } 
+//  else {
+//   getRandomSymbol()
+//  }
+// }
 
-// condition here
+//  condition here
+// //DOM elements
+// var pw = document.getElementById('pw');
+// var length = document.getElementById('length');
+// var uppercase = document.getElementById('uppercase');
+// var lowercase = document.getElementById('lowercase');
+// var number = document.getElementById('number');
+// var symbol = document.getElementById('symbol');
+// var generate = document.getElementById('generate');
 
-function getRandomUpperCase() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
-if 
-// condition here
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
 
-else
+//   passwordText.value = password;
 
-// condition here
-function getRandomNumber() {
-  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-}
-if 
-// condition here
-
-else
-
-// condition here
-function getRandomSymbol() {
-  const symbols = "~!@#$%^&*()_+=-{}|[]\<>?/";
-  return symbols[Math.floor(Math.random() * symbols.length)]
-}
-if 
-// condition here
-
-else
-
-// condition here
-//DOM elements
-var pw = document.getElementById('pw');
-var length = document.getElementById('length');
-var uppercase = document.getElementById('uppercase');
-var lowercase = document.getElementById('lowercase');
-var number = document.getElementById('number');
-var symbol = document.getElementById('symbol');
-var generate = document.getElementById('generate');
-
-//function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  */
+// }
