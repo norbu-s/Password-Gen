@@ -28,8 +28,9 @@ Name: Norbu Sherpa
 
 # Project URL:
 
-* 
+* https://norbu-s.github.io/Password-Gen/Files/Index.html
 
 # Application Screenshot:
 
-[Alt screenshot ] (Develop/Images/Application Screenshot.png)
+Develop/Images/Application Screenshot.png
+
