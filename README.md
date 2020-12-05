@@ -34,4 +34,4 @@ Name: Norbu Sherpa
 
 Develop/Images/Application Screenshot.png
 
-![Screenshot](image/ApplicationScreenshot.png)
+![Screenshot](Image/ApplicationScreenshot.png)
