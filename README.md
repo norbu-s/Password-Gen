@@ -1,10 +1,11 @@
 # Password-Gen
 
 # Project Summary
-Simple app for genereationrandom password
+Simple app for genereating random password using Javascript.
 
 # Project Goals
 Create an app to generate a random password based on the criteria set by the user.
+When a user clicks the "Generate Password" button, it should intiate a flow for entering password lenght and other criterias.
 
 # Installation
 N/A
@@ -34,4 +35,4 @@ Name: Norbu Sherpa
 
 Develop/Images/Application Screenshot.png
 
-![Screenshot](Develop/Image/ApplicationScreenshot.png)
+![Screenshot](/Develop/Image/ApplicationScreenshot.png)
