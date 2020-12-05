@@ -1,15 +1,19 @@
 var lengthmin = 8;
 var lengthmax = 128;
-var generatedPassword = "";
+var password = "";
 var generateEl = document.getElementById('generate');
 var resultEl = document.getElementById('result');
 
 var randomFunc = {
+  length: generateLength,
 	lower: getRandomLowerCase,
 	upper: getRandomUpperCase,
 	number: getRandomNumber,
   symbol: getRandomSymbol
 }
+
+var myJSON = JSON.stringify(randomFunc);
+  document.getElementById("demo").innerHTML = myJSON;
 
 function generateLength() {
     var inputValue = prompt("Choose a length of at least 8 characters and no more than 128 characters");
@@ -19,14 +23,8 @@ function generateLength() {
     }
     else{ alert("Not a valid Input")
     generateLength()
+    console.log("??")
   }
-}
-
-for(let i=0; i<length; i++) {
-  typesArr.forEach(type => {
-  var funcName = Object.keys(type)[0];
-  generatedPassword += randomFunc[funcName]();
-  });
 }
 
 function generatePassword(){
@@ -42,8 +40,8 @@ function generatePassword(){
       if (numberInput) true;{
       getRandomNumber()
   }
-      var specialCharacterinput = confirm("Do you want the password to include a Symbol?");
-      if (specialCharacterinput) true;{
+      var symbolinput = confirm("Do you want the password to include a Symbol?");
+      if (symbolinput) true;{
       getRandomSymbol()
   }
 };
@@ -60,19 +58,22 @@ function generatePassword(){
       return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
   }
       
-  function getRandomSymbol(){
-    specialCharacterinput[(Math.floor(Math.random() * specialCharacterinput.length))];
-      return specialCharacterinput[(Math.floor(Math.random()*specialCharacterinput.length))];
+  function getRandomSymbol() {
+      symbolinput[(Math.floor(Math.random() * symbolinput.length))];
+      return symbolinput[(Math.floor(Math.random()*symbolinput.length))];
     }
 
   generate.addEventListener('click', () => {
-    resultEl.textarea = generatePassword();
+      var length = +length;
+      var hasLower = lowerCaseinput;
+      var hasUpper = upperCaseinput;
+      var hasNumber = numberInput;
+      var hasSymbol = symbolinput;
+  resultEl.textarea = generatePassword();
   });
-  
-  writePassword()
 
   function writePassword() {
       var password = generatePassword();
-      var passwordText = document.querySelector("#password");
+      var passwordText = document.querySelector("#resultEl");
       passwordText.value = password;
   }
